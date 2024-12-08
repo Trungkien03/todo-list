@@ -19,7 +19,6 @@ import React, { useLayoutEffect } from "react";
 import { RefreshControl } from "react-native";
 import TodoItem from "../components/TodoItem";
 import useMainViewModel from "../viewmodels/useTodoListViewModel";
-import useSize from "@app/hooks/useSize";
 
 const TodoListScreen = () => {
   const navigation = useNavigation<StackNavigationProp<RootStackParams>>();
@@ -29,7 +28,7 @@ const TodoListScreen = () => {
 
   useLayoutEffect(() => {
     navigation.setOptions({
-      title: "Danh sách công việc",
+      title: "To-do List",
       headerTitleStyle: { fontSize: 22 },
       headerTitleAlign: "center",
       headerStyle: {

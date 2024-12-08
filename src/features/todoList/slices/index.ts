@@ -1,12 +1,12 @@
 import { Priority, Todo } from "@app/types/todo";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { initialMainState } from "./types";
+import { initialTodoListScreenState } from "./types";
 
 const todoListScreenSlice = createSlice({
   name: "todoList",
-  initialState: initialMainState,
+  initialState: initialTodoListScreenState,
   reducers: {
-    resetMainState: () => initialMainState,
+    resetMainState: () => initialTodoListScreenState,
     addTodo: (
       state,
       action: PayloadAction<{

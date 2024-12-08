@@ -1,6 +1,7 @@
 import { useAppDispatch, useAppSelector } from "@app/stores";
 import { hideDialog, showDialog } from "@app/stores/slices/dialog.slice";
 import { DialogType } from "@app/stores/types/dialog.types";
+import { Todo } from "@app/types/todo";
 import {
   createTable,
   deleteTodoSqlite,
@@ -8,8 +9,7 @@ import {
   getTodosSqlite,
   updateTodoSqlite,
 } from "@app/utils/SQLiteHelper";
-import { useEffect, useCallback } from "react";
-import { Todo } from "@app/types/todo";
+import { useCallback, useEffect } from "react";
 import {
   deleteTodo,
   setIsLoadingGetTodo,
@@ -76,8 +76,8 @@ const useMainViewModel = () => {
         title: "Xác nhận",
         content: "Bạn có chắc là muốn xoá nhiệm vụ này không?",
         type: DialogType.ALERT,
-        confirmButtonText: "Delete",
-        cancelButtonText: "Cancel",
+        confirmButtonText: "Xoá",
+        cancelButtonText: "Huỷ",
         onConfirm: async () => {
           try {
             const db = await getDBConnection();
